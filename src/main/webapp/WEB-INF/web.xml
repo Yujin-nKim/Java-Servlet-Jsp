@@ -34,4 +34,23 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <!-- day02/1.RequestDispatcher/실습01-로그인&로그아웃 -->
+    <servlet>
+        <servlet-name>loginServlet2</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter02.n1RequestDispatcher.LoginServlet</servlet-class>
+
+        <init-param>
+            <param-name>id</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pwd</param-name>
+            <param-value>1234</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet2</servlet-name>
+        <url-pattern>/login2</url-pattern>
+    </servlet-mapping>
+
 </web-app>

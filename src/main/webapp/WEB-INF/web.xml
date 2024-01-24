@@ -96,4 +96,8 @@
         <servlet-name>fileDownloadServlet</servlet-name>
         <url-pattern>/file/fileDownload</url-pattern>
     </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>/jsp/index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -71,4 +71,9 @@
         <filter-name>counterFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!-- day02/3.Listener/실습02-Session 통계 -->
+    <listener>
+        <listener-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.SessionListener</listener-class>
+    </listener>
 </web-app>

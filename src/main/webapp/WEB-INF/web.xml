@@ -76,4 +76,14 @@
     <listener>
         <listener-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.SessionListener</listener-class>
     </listener>
+
+    <!-- day02/4.html-form/실습02-File Upload -->
+    <servlet>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter02.n4html_form.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileUploadServlet</servlet-name>
+        <url-pattern>/file/fileUpload</url-pattern>
+    </servlet-mapping>
 </web-app>

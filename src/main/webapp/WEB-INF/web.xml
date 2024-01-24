@@ -86,4 +86,14 @@
         <servlet-name>fileUploadServlet</servlet-name>
         <url-pattern>/file/fileUpload</url-pattern>
     </servlet-mapping>
+
+    <!-- day02/4.html-form/실습02-File Download -->
+    <servlet>
+        <servlet-name>fileDownloadServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter02.n4html_form.FileDownloadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileDownloadServlet</servlet-name>
+        <url-pattern>/file/fileDownload</url-pattern>
+    </servlet-mapping>
 </web-app>

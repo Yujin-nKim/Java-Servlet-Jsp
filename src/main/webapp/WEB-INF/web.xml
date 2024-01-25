@@ -46,7 +46,7 @@
     <!-- day01/07.Servlet 개발/실습03-초기화 파라미터 -->
     <servlet>
         <servlet-name>helloServlet2</servlet-name>
-        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.HelloServlet2</servlet-class>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n8ServletContext.HelloServlet2</servlet-class>
         <init-param>
             <param-name>title</param-name>
             <param-value>Mr.</param-value>
@@ -79,6 +79,15 @@
         <param-name>url</param-name>
         <param-value>https://nhnacademy.com/</param-value>
     </context-param>
+    <!-- day01/07.Servlet Context/실습02-Global Counter -->
+    <servlet>
+        <servlet-name>nowServlet2</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n8ServletContext.NowServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nowServlet2</servlet-name>
+        <url-pattern>/now2</url-pattern>
+    </servlet-mapping>
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>
@@ -138,14 +147,14 @@
         <listener-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.ServletContextListener</listener-class>
     </listener>
 
-    <filter>
-        <filter-name>counterFilter</filter-name>
-        <filter-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.CounterFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>counterFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>counterFilter</filter-name>-->
+<!--        <filter-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.CounterFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>counterFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 
     <!-- day02/3.Listener/실습02-Session 통계 -->
     <listener>

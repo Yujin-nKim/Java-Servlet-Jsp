@@ -1,6 +1,6 @@
-package com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발;
+package com.nhnacademy.javaservletjsp.Chapter01.n8ServletContext;
 
-import com.nhnacademy.javaservletjsp.Chapter01.n8ServletContext.CounterUtils;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -9,26 +9,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Logger;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class HelloServlet  extends HttpServlet {
-
-    private static Logger log = Logger.getLogger(HelloServlet.class.getName());
+@Slf4j
+public class NowServlet2 extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
+
         CounterUtils.increaseCounter(getServletContext());
 
-        resp.setCharacterEncoding("utf-8");
-        try(PrintWriter writer = resp.getWriter()) {
+        resp.setCharacterEncoding("UTF-8");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String nowDateTimeString = localDateTime.format(dateTimeFormatter);
+
+        try(PrintWriter writer = resp.getWriter()){
             writer.println("<!DOCTYPE html>");
             writer.println("<html>");
             writer.println("<head>");
             writer.println("<meta charset='utf-8'>");
             writer.println("</head>");
             writer.println("<body>");
-            writer.println("<h1>hello servlet!</h1>");
-            writer.println("<h1>안녕 서블릿!</h1>");
+            writer.println("<h1>현재 시간</h1>");
+            writer.println("<h1>"+nowDateTimeString+"</h1>");
             writer.println("<h1> counter : " + getServletContext().getAttribute("counter") + "<h1>");
             writer.println("</body>");
             writer.println("</html>");
@@ -43,15 +49,4 @@ public class HelloServlet  extends HttpServlet {
         super.init(config);
     }
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        log.info("before service!");
-        super.service(req, resp);
-    }
-
-    @Override
-    public void destroy() {
-        log.info("before destroy!");
-        super.destroy();
-    }
 }

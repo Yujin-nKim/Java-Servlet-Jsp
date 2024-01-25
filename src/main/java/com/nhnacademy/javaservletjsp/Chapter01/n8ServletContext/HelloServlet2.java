@@ -1,4 +1,6 @@
-package com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발;
+package com.nhnacademy.javaservletjsp.Chapter01.n8ServletContext;
+
+import com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.HelloServlet;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

@@ -75,9 +75,6 @@
         <url-pattern>/counter</url-pattern>
     </servlet-mapping>
 
-
-
-
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>

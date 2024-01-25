@@ -20,8 +20,13 @@ public class BeautifyServlet extends HttpServlet {
         resp.setContentType("text/plain");
         resp.setCharacterEncoding("utf-8");
 
+        // day01/07.Servlet Context/실습01-Context Param
+        String url = getServletContext().getInitParameter("url");
+
         try(PrintWriter out = resp.getWriter()){
             out.println(Jsoup.parse(html));
+            // day01/07.Servlet Context/실습01-Context Param
+            out.printf("url : %s", url);
         }catch (Exception ex){
             log.info(ex.getMessage());
         }

@@ -74,7 +74,11 @@
         <servlet-name>counterServlet</servlet-name>
         <url-pattern>/counter</url-pattern>
     </servlet-mapping>
-
+    <!-- day01/07.Servlet Context/실습01-Context Param -->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>https://nhnacademy.com/</param-value>
+    </context-param>
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>

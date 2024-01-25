@@ -13,9 +13,16 @@ public class MultiServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String[] values = req.getParameterValues("class");
+
+        // day01/07.Servlet Context/실습01-Context Param
+        String url = getServletContext().getInitParameter("url");
+
         try(PrintWriter out = resp.getWriter()){
             out.println(String.join(",", values));
+            // day01/07.Servlet Context/실습01-Context Param
+            out.printf("url:%s\n",url);
         }catch (IOException ex){
             log.info(ex.getMessage());
         }

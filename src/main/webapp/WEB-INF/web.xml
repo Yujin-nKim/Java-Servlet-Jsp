@@ -141,7 +141,6 @@
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n14Session.LoginServlet</servlet-class>
-
         <init-param>
             <param-name>id</param-name>
             <param-value>admin</param-value>
@@ -155,13 +154,11 @@
         <servlet-name>loginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
-
     <!-- day01/14.Session/실습02-로그아웃 -->
     <servlet>
         <servlet-name>logoutServlet</servlet-name>
         <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n14Session.LogoutServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>logoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
@@ -171,7 +168,6 @@
     <servlet>
         <servlet-name>loginServlet2</servlet-name>
         <servlet-class>com.nhnacademy.javaservletjsp.Chapter02.n1RequestDispatcher.LoginServlet</servlet-class>
-
         <init-param>
             <param-name>id</param-name>
             <param-value>admin</param-value>
@@ -191,19 +187,17 @@
         <param-name>counterFileName2</param-name>
         <param-value>counter.dat2</param-value>
     </context-param>
-
     <listener>
         <listener-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.ServletContextListener</listener-class>
     </listener>
-
-<!--    <filter>-->
-<!--        <filter-name>counterFilter</filter-name>-->
-<!--        <filter-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.CounterFilter</filter-class>-->
-<!--    </filter>-->
-<!--    <filter-mapping>-->
-<!--        <filter-name>counterFilter</filter-name>-->
-<!--        <url-pattern>/*</url-pattern>-->
-<!--    </filter-mapping>-->
+    <filter>
+        <filter-name>counterFilter</filter-name>
+        <filter-class>com.nhnacademy.javaservletjsp.Chapter02.n3Listener.CounterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>counterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <!-- day02/3.Listener/실습02-Session 통계 -->
     <listener>

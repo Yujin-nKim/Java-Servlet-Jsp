@@ -16,7 +16,7 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
         // 경로 : /WEB-INF/classes/counter.dat2
 
         ServletContext servletContext = sce.getServletContext();
-        String counterFileName = servletContext.getInitParameter("counterFileName");
+        String counterFileName = servletContext.getInitParameter("counterFileName2");
         String counterFilePath = "/WEB-INF/classes/" + counterFileName;
         String realFilePath = servletContext.getRealPath(counterFilePath);
         log.error("path:{}", realFilePath);
@@ -49,7 +49,7 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
         // 웹 애플리케이션 종료 시에 counter 값을 방문수 저장 파일에 기록
 
         ServletContext servletContext = sce.getServletContext();
-        String counterFileName = servletContext.getInitParameter("counterFileName");
+        String counterFileName = servletContext.getInitParameter("counterFileName2");
         String counterFilePath = "/WEB-INF/classes/" + counterFileName;
         String realFilePath = servletContext.getRealPath(counterFilePath);
 
@@ -58,7 +58,7 @@ public class ServletContextListener implements javax.servlet.ServletContextListe
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream,StandardCharsets.UTF_8);
                 BufferedWriter fw = new BufferedWriter(outputStreamWriter);
         ){
-            fw.write( String.valueOf(servletContext.getAttribute("counter")));
+            fw.write(String.valueOf(servletContext.getAttribute("counter")));
         } catch (IOException e) {
             e.printStackTrace();
         }

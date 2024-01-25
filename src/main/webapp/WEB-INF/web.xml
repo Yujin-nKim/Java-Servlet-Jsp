@@ -4,6 +4,80 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- day01/07.Servlet 개발/Servlet Lifecycle 확인 -->
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <!-- day01/07.Servlet 개발/현재 시간 출력 NowServlet작성하기 -->
+    <servlet>
+        <servlet-name>nowServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.NowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nowServlet</servlet-name>
+        <url-pattern>/now</url-pattern>
+    </servlet-mapping>
+    <!-- day01/07.Servlet 개발/실습01-Beautify.html -->
+    <servlet>
+        <servlet-name>beautifyServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.BeautifyServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>beautifyServlet</servlet-name>
+        <!-- 현재 html 파일이 webapp 디렉토리 밑에 html 디렉토리 안에 있으므로 /html/url이 와야함  -->
+        <url-pattern>/html/beautify</url-pattern>
+    </servlet-mapping>
+    <!-- day01/07.Servlet 개발/실습02.html form을 처리하는 Servlet -->
+    <servlet>
+        <servlet-name>multiServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.MultiServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>multiServlet</servlet-name>
+        <url-pattern>/multi</url-pattern>
+    </servlet-mapping>
+    <!-- day01/07.Servlet 개발/실습03-초기화 파라미터 -->
+    <servlet>
+        <servlet-name>helloServlet2</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.HelloServlet2</servlet-class>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>Mr.</param-value>
+        </init-param>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>marco</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+    <!-- day01/07.Servlet 개발/실습04-CounterServlet -->
+    <servlet>
+        <servlet-name>counterServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n7Servlet개발.CounterServlet</servlet-class>
+        <init-param>
+            <param-name>counter</param-name>
+            <param-value>100</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>counterServlet</servlet-name>
+        <url-pattern>/counter</url-pattern>
+    </servlet-mapping>
+
+
+
+
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>

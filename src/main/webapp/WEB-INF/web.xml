@@ -120,7 +120,23 @@
         <error-code>500</error-code>
         <location>/error/500.html</location>
     </error-page>
-
+    <!-- day01/13.Cookie/실습01-ResourceBundle_Cookie -->
+    <servlet>
+        <servlet-name>setCookieServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n13Cookie.SetCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>setCookieServlet</servlet-name>
+        <url-pattern>/set-cookie</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>readCookieServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n13Cookie.ReadCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>readCookieServlet</servlet-name>
+        <url-pattern>/read-cookie</url-pattern>
+    </servlet-mapping>
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>

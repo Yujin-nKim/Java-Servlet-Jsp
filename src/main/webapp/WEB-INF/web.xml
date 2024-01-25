@@ -97,7 +97,15 @@
         <servlet-name>requestServlet</servlet-name>
         <url-pattern>/req</url-pattern>
     </servlet-mapping>
-
+    <!-- day01/09.HttpServletResponse/실습01-HttpServletResponse -->
+    <servlet>
+        <servlet-name>responseServlet</servlet-name>
+        <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n10HttpServletResponse.ResponseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>responseServlet</servlet-name>
+        <url-pattern>/resp</url-pattern>
+    </servlet-mapping>
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>

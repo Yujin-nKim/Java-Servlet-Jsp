@@ -97,7 +97,7 @@
         <servlet-name>requestServlet</servlet-name>
         <url-pattern>/req</url-pattern>
     </servlet-mapping>
-    <!-- day01/09.HttpServletResponse/실습01-HttpServletResponse -->
+    <!-- day01/10.HttpServletResponse/실습01-HttpServletResponse -->
     <servlet>
         <servlet-name>responseServlet</servlet-name>
         <servlet-class>com.nhnacademy.javaservletjsp.Chapter01.n10HttpServletResponse.ResponseServlet</servlet-class>
@@ -106,6 +106,21 @@
         <servlet-name>responseServlet</servlet-name>
         <url-pattern>/resp</url-pattern>
     </servlet-mapping>
+    <!-- day01/11.web.xml/실습01-web -->
+    <!-- welcome-file-list 지정 -->
+    <welcome-file-list>
+        <welcome-file>/html/main.html</welcome-file>
+    </welcome-file-list>
+    <!-- error code 400, 500에 대한 error page 설정 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.html</location>
+    </error-page>
+
     <!-- day01/14.Session/실습01-로그인 -->
     <servlet>
         <servlet-name>loginServlet</servlet-name>
@@ -199,7 +214,7 @@
         <url-pattern>/file/fileDownload</url-pattern>
     </servlet-mapping>
     
-    <welcome-file-list>
-        <welcome-file>/jsp/index.jsp</welcome-file>
-    </welcome-file-list>
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>/jsp/index.jsp</welcome-file>-->
+<!--    </welcome-file-list>-->
 </web-app>

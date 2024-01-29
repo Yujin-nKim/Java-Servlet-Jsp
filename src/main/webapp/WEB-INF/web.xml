@@ -241,4 +241,10 @@
         <filter-name>characterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://nhnacademy.com/cfmt</taglib-uri>
+            <taglib-location>/WEB-INF/tld/customTagLibrary.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>

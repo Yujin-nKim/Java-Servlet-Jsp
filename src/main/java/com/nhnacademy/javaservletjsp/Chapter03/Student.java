@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-@Getter
+
 public class Student {
     private String id;
     private String name;
@@ -19,5 +19,25 @@ public class Student {
         this.gender = gender;
         this.age = age;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 }

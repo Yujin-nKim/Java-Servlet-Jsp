@@ -16,24 +16,28 @@ import java.io.IOException;
 import java.util.Objects;
 
 @Slf4j
-@WebServlet(name = "studentRegisterServlet", urlPatterns = "/student/register")
-public class StudentRegisterServlet extends HttpServlet {
+@WebServlet(name="studentUpdateServlet", urlPatterns = "/student/update")
+public class StudentUpdateServlet extends HttpServlet {
     private StudentRepository studentRepository;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         //todo init studentRepository
         studentRepository = (StudentRepository) config.getServletContext().getAttribute("studentRepository");
-        log.info("StudentRegisterServlet | StudentRepository 초기화 완료");
+        log.info("StudentUpdateServlet | StudentRepository 초기화 완료");
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //todo /student/register.jsp forward 하기
+        //todo 학생 조회
+        String id = req.getParameter("id");
+        Student student = studentRepository.getStudentById(id);
+        req.setAttribute("student", student);
+
+        //todo forward : /student/register.jsp
         RequestDispatcher rd = req.getRequestDispatcher("/student/register.jsp");
         rd.forward(req, resp);
-    }
 
+    }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -62,12 +66,15 @@ public class StudentRegisterServlet extends HttpServlet {
             resp.sendError(400, "student age must be integer");
         }
 
-        //todo save 구현
+        //todo student 저장
         Student student = new Student(id, name, Gender.valueOf(gender), student_age);
-        studentRepository.save(student);
-        log.info("새로운 student 등록 완료");
+        studentRepository.update(student);
 
-        //todo redirect /student/view?id=student1
+        //todo /student/view?id=student1 <-- redirect
         resp.sendRedirect("/student/view?id="+id);
+
+
+
     }
 }
+

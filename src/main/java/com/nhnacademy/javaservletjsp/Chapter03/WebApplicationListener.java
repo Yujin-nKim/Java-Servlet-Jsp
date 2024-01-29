@@ -18,21 +18,21 @@ public class WebApplicationListener implements ServletContextListener {
         StudentRepository studentRepository = new MapStudentRepository();
 
         String[][] dummy_data = {
-                {"20010912", "남예준", "M"},
-                {"20010210", "한노아", "M"},
-                {"20020715", "채봉구", "M"},
-                {"20030524", "도은호", "M"},
-                {"00001101", "유하민", "M"},
-                {"20192671", "김유진", "F"},
-                {"20001122", "채밤비", "F"},
-                {"11334466", "김냠밤", "F"},
-                {"09094433", "홍길동", "F"},
-                {"88991122", "김도도", "F"}
+                {"남예준", "M"},
+                {"한노아", "M"},
+                {"채봉구", "M"},
+                {"도은호", "M"},
+                {"유하민", "M"},
+                {"김유진", "F"},
+                {"채밤비", "F"},
+                {"김냠밤", "F"},
+                {"홍길동", "F"},
+                {"김도도", "F"}
         };
 
         for(int i = 1; i <= 10; i++) {
             Random random = new Random();
-            Student student = new Student(dummy_data[i-1][0], dummy_data[i-1][1], Gender.valueOf(dummy_data[i-1][2]), random.nextInt(20)+10);
+            Student student = new Student("student"+i, dummy_data[i-1][0], Gender.valueOf(dummy_data[i-1][1]), random.nextInt(20)+10);
             studentRepository.save(student);
         }
 

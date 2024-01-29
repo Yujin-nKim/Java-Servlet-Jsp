@@ -10,7 +10,7 @@ public interface StudentRepository {
     // 학생-삭제
     void deleteById(String id);
     // 학생-조회 by id
-    String getStudentById(String id);
+    Student getStudentById(String id);
     // 학생-리스트
     List<Student> getStudents();
     // 학생-아이디 존재여부

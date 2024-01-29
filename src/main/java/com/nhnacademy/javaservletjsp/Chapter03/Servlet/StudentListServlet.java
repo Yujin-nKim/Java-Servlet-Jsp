@@ -4,7 +4,6 @@ import com.nhnacademy.javaservletjsp.Chapter03.Student;
 import com.nhnacademy.javaservletjsp.Chapter03.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

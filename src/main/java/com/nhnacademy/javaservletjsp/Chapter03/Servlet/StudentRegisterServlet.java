@@ -30,8 +30,10 @@ public class StudentRegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //todo /student/register.jsp forward 하기
-        RequestDispatcher rd = req.getRequestDispatcher("/student/register.jsp");
-        rd.forward(req, resp);
+        //RequestDispatcher rd = req.getRequestDispatcher("/student/register.jsp");
+        //rd.forward(req, resp);
+        //todo view attribute 설정 /student/register.jsp
+        req.setAttribute("view", "/student/register.jsp");
     }
 
     @Override
@@ -68,6 +70,9 @@ public class StudentRegisterServlet extends HttpServlet {
         log.info("새로운 student 등록 완료");
 
         //todo redirect /student/view?id=student1
-        resp.sendRedirect("/student/view?id="+id);
+        //resp.sendRedirect("/student/view?id="+id);
+        //todo redirect view attribute 설정
+        //req.setAttribute("view", "redirect:/student/view.do?id="+id);
+        req.setAttribute("view", "redirect:/student/view.do?id="+id);
     }
 }

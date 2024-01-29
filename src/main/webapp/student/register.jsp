@@ -15,7 +15,9 @@
     //수정
         action = /student/update
 -->
-<form method="post" ${empty student ? 'action ="/student/register"' : 'action="/student/update"'} >
+<!-- todo /register -> /register.do 변경  -->
+<!-- todo /update -> /update.do 변경  -->
+<form method="post" ${empty student ? 'action ="/student/register.do"' : 'action="/student/update.do"'} >
     <table>
         <tbody>
         <tr>

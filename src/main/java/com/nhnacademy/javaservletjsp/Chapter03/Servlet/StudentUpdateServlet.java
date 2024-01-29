@@ -34,8 +34,10 @@ public class StudentUpdateServlet extends HttpServlet {
         req.setAttribute("student", student);
 
         //todo forward : /student/register.jsp
-        RequestDispatcher rd = req.getRequestDispatcher("/student/register.jsp");
-        rd.forward(req, resp);
+        //RequestDispatcher rd = req.getRequestDispatcher("/student/register.jsp");
+        //rd.forward(req, resp);
+        //todo view attribute 설정 - /student/register.jsp
+        req.setAttribute("view", "/student/register.jsp");
 
     }
     @Override
@@ -71,8 +73,9 @@ public class StudentUpdateServlet extends HttpServlet {
         studentRepository.update(student);
 
         //todo /student/view?id=student1 <-- redirect
-        resp.sendRedirect("/student/view?id="+id);
-
+        //resp.sendRedirect("/student/view?id="+id);
+        //todo view attribute 설정 - redirect
+        req.setAttribute("view", "redirect:/student/view?id="+id);
 
 
     }

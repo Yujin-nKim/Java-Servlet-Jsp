@@ -17,7 +17,6 @@ public class MapStudentRepository implements StudentRepository{
     @Override
     public void save(Student student) {
         studentsMap.put(student.getId(), student);
-        System.out.println("save 실행");
     }
 
     @Override
@@ -26,7 +25,6 @@ public class MapStudentRepository implements StudentRepository{
 //        Student targetStudent = getStudentById(id);
         deleteById(student.getId());
         save(student);
-        System.out.println("update 실행");
     }
 
     @Override

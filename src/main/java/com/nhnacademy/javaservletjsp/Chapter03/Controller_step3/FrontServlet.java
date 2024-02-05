@@ -26,13 +26,18 @@ public class FrontServlet extends HttpServlet {
 
         try {
             //todo 실제 로직을 처리할 Command(Controller) 결정, String view = command.execute() ...
+            Command command = resolveCommand(req.getServletPath(), req.getMethod());
+
+            String view = command.execute(req, resp);
 
             if (view.startsWith(REDIRECT_PREFIX)) {
                 log.error("redirect-url : {}", view.substring(REDIRECT_PREFIX.length() + 1));
                 //todo `redirect:`로 시작하면 redirect 처리.
+                resp.sendRedirect(view.substring(REDIRECT_PREFIX.length()+1));
             } else {
                 //todo redirect 아니면 JSP에게 view 처리를 위임하여 그 결과를 include 처리.
-
+                RequestDispatcher rd = req.getRequestDispatcher(view);
+                rd.include(req, resp);
             }
         }catch (Exception ex){
             //공통 error 처리
